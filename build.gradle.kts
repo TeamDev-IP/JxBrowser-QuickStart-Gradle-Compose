@@ -23,7 +23,7 @@ plugins {
 
     kotlin("jvm") version "2.0.0"
     
-    // Apply the application plugin to add support for building a CLI application
+    // Apply the application plugin to add support for building a CLI application.
     application
 
     // Adds JxBrowser.
