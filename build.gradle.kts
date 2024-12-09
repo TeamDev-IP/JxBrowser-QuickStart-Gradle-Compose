@@ -21,6 +21,7 @@
 plugins {
     java
     kotlin("jvm") version "2.0.0"
+    application
 
     // Adds JxBrowser.
     id("com.teamdev.jxbrowser") version "1.2.1"
@@ -37,6 +38,10 @@ repositories {
 
 jxbrowser {
     version = "8.1.0"
+}
+
+application {
+    mainClass.set("HelloComposeKt")
 }
 
 dependencies {
