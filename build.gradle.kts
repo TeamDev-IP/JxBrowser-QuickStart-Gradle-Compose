@@ -41,7 +41,7 @@ jxbrowser {
 }
 
 application {
-    mainClass.set("HelloComposeKt")
+    mainClass.set("com.teamdev.jxbrowser.quickstart.AppKt")
 }
 
 dependencies {

@@ -1,8 +1,8 @@
-# JxBrowser in Compose Gradle Project
+# JxBrowser in Compose Gradle project
 
 This example demonstrates how to configure a Gradle project with JxBrowser to embed a Compose `BrowserView` widget into a Compose desktop application to display web pages.
 
-## Download the Project
+## Download the project
 
 Clone this repository using the following command:
 
@@ -11,11 +11,11 @@ Clone this repository using the following command:
  cd JxBrowser-QuickStart-Gradle-Compose
  ```
 
-## Get License
+## Get license
 
 Download a free 30-day evaluation license key by sending a request via the [web form](https://www.teamdev.com/jxbrowser#evaluate).
 
-## Run the Compose Application
+## Run the Compose application
 
 Use the following command:
 
