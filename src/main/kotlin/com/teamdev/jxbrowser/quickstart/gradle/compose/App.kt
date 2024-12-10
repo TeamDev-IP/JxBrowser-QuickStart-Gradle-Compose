@@ -18,6 +18,8 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+package com.teamdev.jxbrowser.quickstart.gradle.compose
+
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
@@ -42,6 +44,6 @@ fun main() = singleWindowApplication(
     BrowserView(browser)
 
     LaunchedEffect(Unit) {
-        browser.navigation.loadUrl("https://ui.shadcn.com/blocks")
+        browser.navigation.loadUrl("https://html5test.teamdev.com")
     }
 }
