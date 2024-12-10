@@ -44,6 +44,6 @@ fun main() = singleWindowApplication(
     BrowserView(browser)
 
     LaunchedEffect(Unit) {
-        browser.navigation.loadUrl("https://ui.shadcn.com/blocks")
+        browser.navigation.loadUrl("https://html5test.teamdev.com")
     }
 }
