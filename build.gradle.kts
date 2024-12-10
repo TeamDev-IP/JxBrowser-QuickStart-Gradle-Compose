@@ -26,7 +26,7 @@ plugins {
     // Provides convenience methods for adding JxBrowser dependencies into a project.
     id("com.teamdev.jxbrowser") version "1.2.1"
 
-    // Adds dependencies to the Compose UI toolkit integration.
+    // Adds the Compose plugins for easy configuration.
     id("org.jetbrains.compose") version "1.7.0-rc01"
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
 }
