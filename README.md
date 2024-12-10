@@ -17,7 +17,7 @@ Use the following command to start the application:
 
 Once launched, the app loads the [HTML5 test page][html5-test-page]:
 
-![BrowserView in Compose app][compose-browser-view]
+![BrowserView in Compose Desktop app][compose-browser-view]
 
 
 [web-form]: https://www.teamdev.com/jxbrowser#evaluate
