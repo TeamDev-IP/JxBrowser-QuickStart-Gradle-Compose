@@ -18,7 +18,7 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package com.teamdev.jxbrowser.quickstart
+package com.teamdev.jxbrowser.quickstart.gradle.compose
 
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.remember

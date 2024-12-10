@@ -20,16 +20,13 @@
 
 plugins {
     java
-
+    application
     kotlin("jvm") version "2.0.0"
     
-    // Apply the application plugin to add support for building a CLI application.
-    application
-
-    // Adds JxBrowser.
+    // Provides convenience methods for adding JxBrowser dependencies into a project.
     id("com.teamdev.jxbrowser") version "1.2.1"
 
-    // Adds UI toolkits.
+    // Adds dependencies to the Compose UI toolkit integration.
     id("org.jetbrains.compose") version "1.7.0-rc01"
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
 }
@@ -40,21 +37,21 @@ repositories {
 }
 
 jxbrowser {
-    version = "8.1.0"
+    version = "8.2.0"
 }
 
 application {
-    mainClass.set("com.teamdev.jxbrowser.quickstart.AppKt")
+    mainClass.set("com.teamdev.jxbrowser.quickstart.gradle.compose.AppKt")
 }
 
 dependencies {
-    // Use JxBrowser cross-platform binaries
-    implementation(jxbrowser.crossPlatform)
+    // Detects the current platform and adds the corresponding Chromium binaries.
+    implementation(jxbrowser.currentPlatform)
 
-    // Use JxBrowser Compose Desktop toolkit
+    // Adds dependency to the Compose Desktop UI toolkit integration.
     implementation(jxbrowser.compose)
 
-    // Dependency on Compose for the current platform.
+    // Adds dependency to the Compose Desktop UI toolkit for the current platform.
     implementation(compose.desktop.currentOs)
 }
 
