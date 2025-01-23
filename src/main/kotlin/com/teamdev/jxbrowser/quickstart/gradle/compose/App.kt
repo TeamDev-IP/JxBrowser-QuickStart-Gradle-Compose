@@ -20,7 +20,7 @@
 
 package com.teamdev.jxbrowser.quickstart.gradle.compose
 
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
@@ -38,12 +38,20 @@ fun main() = singleWindowApplication(
     title = "Compose Desktop BrowserView",
     state = WindowState(width = 700.dp, height = 500.dp),
 ) {
+    // Initialize Chromium.
     val engine = remember { Engine(OFF_SCREEN) }
+
+    // Create a Browser instance.
     val browser = remember { engine.newBrowser() }
 
+    // Add a BrowserView composable to display web content.
     BrowserView(browser)
 
-    LaunchedEffect(Unit) {
+    DisposableEffect(Unit) {
         browser.navigation.loadUrl("https://html5test.teamdev.com")
+        onDispose {
+            // Shutdown Chromium and release allocated resources.
+            engine.close()
+        }
     }
 }
