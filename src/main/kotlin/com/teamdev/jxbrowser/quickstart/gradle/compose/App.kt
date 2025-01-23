@@ -34,24 +34,26 @@ import com.teamdev.jxbrowser.view.compose.BrowserView
  * This example demonstrates how to embed a BrowserView component
  * into a Compose Desktop application and load a web page.
  */
-fun main() = singleWindowApplication(
-    title = "Compose Desktop BrowserView",
-    state = WindowState(width = 700.dp, height = 500.dp),
-) {
+fun main() {
     // Initialize Chromium.
-    val engine = remember { Engine(OFF_SCREEN) }
+    val engine = Engine(OFF_SCREEN)
 
     // Create a Browser instance.
-    val browser = remember { engine.newBrowser() }
+    val browser = engine.newBrowser()
 
-    // Add a BrowserView composable to display web content.
-    BrowserView(browser)
+    singleWindowApplication(
+        title = "Compose Desktop BrowserView",
+        state = WindowState(width = 700.dp, height = 500.dp),
+    ) {
+        // Add a BrowserView composable to display web content.
+        BrowserView(browser)
 
-    DisposableEffect(Unit) {
-        browser.navigation.loadUrl("https://html5test.teamdev.com")
-        onDispose {
-            // Shutdown Chromium and release allocated resources.
-            engine.close()
+        DisposableEffect(Unit) {
+            browser.navigation.loadUrl("https://html5test.teamdev.com")
+            onDispose {
+                // Shutdown Chromium and release allocated resources.
+                engine.close()
+            }
         }
     }
 }
