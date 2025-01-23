@@ -21,7 +21,6 @@
 package com.teamdev.jxbrowser.quickstart.gradle.compose
 
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.singleWindowApplication
