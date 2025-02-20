@@ -20,8 +20,7 @@
 
 package com.teamdev.jxbrowser.quickstart.gradle.compose
 
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.singleWindowApplication
@@ -34,16 +33,26 @@ import com.teamdev.jxbrowser.view.compose.BrowserView
  * This example demonstrates how to embed a BrowserView component
  * into a Compose Desktop application and load a web page.
  */
-fun main() = singleWindowApplication(
-    title = "Compose Desktop BrowserView",
-    state = WindowState(width = 700.dp, height = 500.dp),
-) {
-    val engine = remember { Engine(OFF_SCREEN) }
-    val browser = remember { engine.newBrowser() }
+fun main() {
+    // Initialize Chromium.
+    val engine = Engine(OFF_SCREEN)
 
-    BrowserView(browser)
+    // Create a Browser instance.
+    val browser = engine.newBrowser()
 
-    LaunchedEffect(Unit) {
-        browser.navigation.loadUrl("https://html5test.teamdev.com")
+    singleWindowApplication(
+        title = "Compose Desktop BrowserView",
+        state = WindowState(width = 700.dp, height = 500.dp),
+    ) {
+        // Add a BrowserView composable to display web content.
+        BrowserView(browser)
+
+        DisposableEffect(Unit) {
+            browser.navigation.loadUrl("https://html5test.teamdev.com")
+            onDispose {
+                // Shutdown Chromium and release allocated resources.
+                engine.close()
+            }
+        }
     }
 }
