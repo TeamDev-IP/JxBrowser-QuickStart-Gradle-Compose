@@ -23,14 +23,14 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     java
     application
-    kotlin("jvm") version "2.2.21"
+    kotlin("jvm") version "2.3.20"
     
     // Provides convenience methods for adding JxBrowser dependencies into a project.
     id("com.teamdev.jxbrowser") version "1.2.1"
 
     // Adds the Compose plugins for easy configuration.
-    id("org.jetbrains.compose") version "1.7.3"
-    id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+    id("org.jetbrains.compose") version "1.10.3"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.20"
 }
 
 repositories {
