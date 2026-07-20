@@ -29,7 +29,7 @@ plugins {
     id("com.teamdev.jxbrowser") version "1.2.1"
 
     // Adds the Compose plugins for easy configuration.
-    id("org.jetbrains.compose") version "1.10.3"
+    id("org.jetbrains.compose") version "1.11.0"
     id("org.jetbrains.kotlin.plugin.compose") version "2.3.20"
 }
 
